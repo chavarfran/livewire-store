@@ -11,6 +11,10 @@ class Index extends Component
 {
    
     use WithPagination;
+    use OrderTrait;
+    
+    public $confirmingDeleteCategory;
+    public $categoryToDelete;
 
     public function render()
     {
@@ -18,10 +22,16 @@ class Index extends Component
         return view('Livewire.Dashboard.Category.Index', compact('categories'));
     }
 
-    public function delete(Category $category)
+    public function seletedCategoryToDelete(Category $category)
     {
-        $this->emit("deleted");
-        $category->delete();
+        $this->confirmingDeleteCategory = true;
+        $this->categoryToDelete = $category;
     }
 
+    public function delete()
+    {
+        $this->emit("deleted");
+        $this->confirmingDeleteCategory = false;
+        $this->categoryToDelete->delete();
+    }
 }
