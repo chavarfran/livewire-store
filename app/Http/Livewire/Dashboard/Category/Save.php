@@ -32,7 +32,7 @@ class Save extends Component
 
     public function render()
     {
-        return view('Livewire.Dashboard.Category.Save');
+        return view('livewire.dashboard.category.save');
     }
 
     public function submit()

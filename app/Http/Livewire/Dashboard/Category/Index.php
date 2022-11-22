@@ -19,7 +19,7 @@ class Index extends Component
     public function render()
     {
         $categories = Category::paginate(10);
-        return view('Livewire.Dashboard.Category.Index', compact('categories'));
+        return view('livewire.dashboard.category.index', compact('categories'));
     }
 
     public function seletedCategoryToDelete(Category $category)

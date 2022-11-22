@@ -52,7 +52,7 @@
 
     <x-jet-confirmation-modal wire:model="confirmingDeleteCategory">
         <x-slot name="title">
-            {{ __('Eliminar Category') }}
+            {{ __('Eliminar Categoria') }}
         </x-slot>
 
         <x-slot name="content">
